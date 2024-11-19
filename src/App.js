@@ -1,25 +1,29 @@
-import logo from './logo.svg';
-import './App.css';
+import React from 'react';
+import './App.css'; // Import the CSS file
+import ShortenUrl from './components/ShortenUrl';
+import UpdateUrl from './components/UpdateUrl';
+import GetOriginalUrl from './components/GetOriginalUrl';
+import UpdateExpiry from './components/UpdateExpiry';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
-}
+const App = () => {
+    return (
+        <div className="app-container">
+            <header className="header">
+                <h1>URL Shortener</h1>
+            </header>
+            <div className="main-content">
+                <main>
+                    <ShortenUrl />
+                    <UpdateUrl />
+                    <GetOriginalUrl />
+                    <UpdateExpiry />
+                </main>
+            </div>
+            <footer className="footer">
+                <p>&copy; {new Date().getFullYear()} URL Shortener. All Rights Reserved.</p>
+            </footer>
+        </div>
+    );
+};
 
 export default App;
